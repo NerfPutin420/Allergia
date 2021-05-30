@@ -1,0 +1,15 @@
+  
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span></span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <app-container classes="container-1 flex">
+    <app-allergy-card class="item" *ngFor="let item of list | async" [allergy]="item" (getAllergy)="onGetAllergy($event)"></app-allergy-card>
+    <br>
+  </app-container>
+  <button mat-fab class="action-btn" (click)="openDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+  

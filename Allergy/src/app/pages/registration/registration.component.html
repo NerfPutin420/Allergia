@@ -1,0 +1,28 @@
+<div class="centering">
+    <mat-card class="reg-card">
+        <form [formGroup]="form" (ngSubmit)=registration()>
+            <h2>Regisztráció</h2>
+            <mat-form-field class = "max-width">
+                <mat-label>Felhasználónév</mat-label>
+                <input matInput type="text" name="nickname" required formControlName="username">
+            </mat-form-field>
+            <mat-form-field class = "max-width">
+                <mat-label>Email cím</mat-label>
+                <input matInput type="email" name="email" required formControlName="email">
+            </mat-form-field>
+            <mat-form-field class = "max-width">
+                <mat-label>Jelszó</mat-label>
+                <input matInput type="password" name="password" formControlName="password">
+            </mat-form-field>
+            <mat-form-field class = "max-width">
+                <mat-label>Jelszó megerősítés</mat-label>
+                <input matInput type="password" name="repassword" formControlName="repassword">
+            </mat-form-field>
+            <br>
+            <div><button type = "submit" mat-button color="primary" class="max-width" [disabled]="form.invalid" >Regisztráció</button></div>
+            <br>
+            <div><button mat-button color="accent" [routerLink]="['/login']">Bejelentkezés</button></div>
+            <br>
+        </form>
+    </mat-card>
+</div>

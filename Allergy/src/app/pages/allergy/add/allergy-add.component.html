@@ -1,0 +1,23 @@
+<form [formGroup]="form">
+    <h2>Allergia felvétel</h2>
+    <mat-form-field class="max-width">
+        <mat-label>Páciens neve</mat-label>
+        <input matInput placeholder="Pl. Gipsz Jakab" focus formControlName="patient" required>  
+    </mat-form-field>
+    <mat-form-field class="max-width">
+        <mat-label>Típusa</mat-label>
+        <input matInput placeholder="Pl. mogyoró allergia" focus formControlName="type" required>
+    </mat-form-field>
+    <mat-form-field class="max-width">
+        <mat-label>Betegség kategóriája</mat-label>
+        <input matInput placeholder="Pl. Allergia vagy Intolerancia" focus formControlName="category" required>  
+    </mat-form-field>
+    <mat-form-field class="max-width">
+        <mat-label>Kritikus értéke</mat-label>
+        <input matInput placeholder="Pl. 2" focus formControlName="criticality" required>  
+    </mat-form-field>
+    <div style="display: flex; justify-content: flex-end;">
+        <button mat-button (click)="dialogRef.close()" class = "margin-right">Vissza</button>
+        <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">Adat felvétel</button>
+    </div>
+</form>

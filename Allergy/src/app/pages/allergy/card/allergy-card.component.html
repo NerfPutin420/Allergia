@@ -1,0 +1,19 @@
+<mat-card *ngIf="allergy" (click)="getAllergy.emit(allergy)">
+    <mat-card-header>
+        <mat-card-title>{{allergy.category}}</mat-card-title>
+        <mat-card-subtitle >{{allergy.patient + ' páciens'}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="allergy.img" alt="nincs kép">
+    <mat-card-content>
+        <div [style.backgroundColor]='allergy.criticality >= 4 ? "red":"blue"' class="criticality">{{allergy.criticality}}</div>
+        <button style="background-color: #303030;" mat-button (click)="toggleStar($event)">
+            <mat-icon *ngIf="allergy.warning;else star" style="color: #e91e63;">star</mat-icon>
+                <ng-template #star>
+                    <mat-icon>star_outline</mat-icon>
+                </ng-template>
+        </button>
+        <button style="background-color: #303030;" mat-button >
+            <mat-icon>restore_from_trash</mat-icon>
+        </button>
+    </mat-card-content>
+</mat-card>
